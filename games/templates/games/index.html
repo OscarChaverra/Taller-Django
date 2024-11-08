@@ -1,0 +1,24 @@
+{% if game_list %}
+    <h2>lista de juegos:</h2>
+
+    <table  border= "2">
+        <thead>
+            <tr style="padding: 1em;">
+                <td>Name</td>
+                <td>Description</td>
+                <td>Price</td>
+            </tr>
+        </thead>
+        {% for game in game_list %}
+            <tbody>
+                <tr style="padding: 1em;">
+                    <td>{{game.name}}</td>
+                    <td>{{game.description}}</td>
+                    <td>{{game.price}}</td>
+                </tr>
+            </tbody>
+        {% endfor %}
+    </table>
+{% else %}
+    <h1 style="color: red">No hay juegos que mostrar.</h1>
+{% endif %}
